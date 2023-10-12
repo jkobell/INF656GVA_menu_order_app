@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Listing } from './listing';
 import { LISTINGS } from './mock_listings';
 import { LISTINGS_IMAGES } from './mock_listings_images';
+import { setContentContainerSize } from 'set_content_container_size';
+//import { runThis } from 'set_content_container_size';
 
 @Component({
     selector: 'app_listings',
@@ -9,14 +11,19 @@ import { LISTINGS_IMAGES } from './mock_listings_images';
     styleUrls: ['./listings.component.css']
   })
 
-  export class ListingsComponent {
+  export class ListingsComponent implements OnInit {
+    
     listings = LISTINGS;
     selectedListing?: Listing;
-
+    
     listings_images = LISTINGS_IMAGES;
-    image = this.listings_images[0].image_b64; 
-
+    //image = this.listings_images[0].image_b64;
+    
+    ngOnInit(): void {
+      setContentContainerSize();
+    }
+   
     onSelect(listing: Listing): void {
-        this.selectedListing = listing;
+        this.selectedListing = listing;    
     }
   }

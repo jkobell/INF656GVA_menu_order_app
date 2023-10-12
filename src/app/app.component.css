@@ -1,8 +1,17 @@
-.wrapper {
+/* .wrapper {
     box-sizing: border-box;
     min-height: 100%;    
     display: flex;
     flex-direction: column;
+} */
+.header_wrapper {
+  /* box-sizing: border-box; */
+  /* min-height: 100%; */    
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  min-width: 100%;
 }
 
 .toolbar {
@@ -83,19 +92,30 @@ header a {
 
 .footer_wrapper {
   display: flex;
-  flex-wrap: wrap;
-  flex-grow: 0;
-  flex-shrink: 0;
-  font-weight: 600;
-  padding: 0;
+  flex-direction: column;
+  position: sticky;
+  bottom: 0;
+  min-width: 100%;
 }
 
 .app_footer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 0;
+  flex-shrink: 0;
+  /* min-width: 100%; */
+  background-color: #3884da;
+  color: white;
+  padding: 0;
+  /* margin: 0; */  
+}
+
+/* .app_footer {
   min-width: 100%;
   background-color: #3884da;
   color: white;
   margin: 0;  
-}
+} */
 
 footer ul {
   display: flex;
